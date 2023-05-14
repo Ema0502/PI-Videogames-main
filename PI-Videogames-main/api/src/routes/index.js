@@ -6,6 +6,7 @@ const { getVideogameById } = require("../controllers/getVideogameById");
 const { getFind15Videogames } = require("../controllers/getFind15Videogames");
 const { postVideogame } = require("../controllers/postVideogame");
 const { getGenres } = require("../controllers/getGenres");
+const { postNewUser } = require("../controllers/postNewUser")
 
 const router = Router();
 
@@ -21,5 +22,9 @@ router.get("/search", getFind15Videogames);
 router.post("/videogames", postVideogame);
 
 router.get("/genres", getGenres);
+
+router.post("singup", postNewUser);
+
+
 
 module.exports = router;
