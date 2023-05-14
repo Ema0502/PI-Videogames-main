@@ -1,8 +1,8 @@
 import './App.css';
 import { useState, useEffect } from "react";
-import { Routes, Route, useLocation, useNavigate, useRoutes } from "react-router-dom";
+import { Switch, Route, useLocation, useNavigate } from "react-router-dom";
 import Form from "./components/Form/Form"
-
+import Landing from './components/Landing/Landing';
 
 function App() {
   
@@ -10,18 +10,16 @@ function App() {
     console.log('peticion')
   };
 
-  const routes = useRoutes([{ path: "/", element: <Form login={login} /> }]);
-
   return (
     <div className="App">
       <h1>Henry Videogames</h1>
-        
-        <Route path="/" element={<Form login={login} />} />
-      
 
+      <Switch>
+        <Route path="/" element={<Landing/>}></Route>
+        <Route path="/login" element={<Form login={login} />} />
+      </Switch>
     </div>
   );
 }
 
 export default App;
-git 

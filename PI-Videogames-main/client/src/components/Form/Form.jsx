@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"
 import validation from "../validation/validation";
 
 const Form = ({ login }) => {
@@ -7,6 +8,8 @@ const Form = ({ login }) => {
     email: "",
     password: "",
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     setUserData({
@@ -22,9 +25,10 @@ const Form = ({ login }) => {
     );
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event) => {   //evita que se recargue la pagina al hacer un click en el boton
     event.preventDefault();
     login(userData);
+    navigate("/home");
   };
 
   return (
@@ -34,14 +38,16 @@ const Form = ({ login }) => {
       </label>
       <input type="email" name="email" value={userData.email} onChange={handleChange} />
       {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
+
       <hr />
+
       <label htmlFor="password" style={{ color: "blue" }}>
         Password:{" "}
       </label>
       <input type="password" name="password" value={userData.password} onChange={handleChange} />
       {errors.password && <p style={{ color: "red" }}>{errors.password}</p>}
 
-      <button>Submit</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
