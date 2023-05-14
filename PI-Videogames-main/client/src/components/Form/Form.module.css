@@ -1,0 +1,47 @@
+form {
+    justify-content: space-around;
+    padding: 1rem;
+    border-radius: 1rem;
+    gap: 1rem;
+    margin: 1rem;
+    display:grid;
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-style: italic;
+}
+input{
+    text-align: center;
+    padding: .2rem;
+    border-radius: .6rem;
+    gap: 1rem;
+    font-style: italic;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.img1{
+    width: 800px;
+    height: 300px;
+    
+}
+
+.img2{
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    padding:initial;
+}
+
+button {
+  font-family: monospace;
+  display: inline-block;
+  border-radius: 10rem;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-image: linear-gradient(to bottom, #75ff4e, #55ff81, #3cffa9, #3cffc9, #59ffe2);
+}
